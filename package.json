@@ -1,0 +1,23 @@
+{
+  "name": "GraphQL-demo",
+  "version": "1.0.0",
+  "description": "GraphQL-demo",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengbo-ji/GraphQL-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mengbo-ji/GraphQL-demo/issues"
+  },
+  "homepage": "https://github.com/mengbo-ji/GraphQL-demo#readme",
+  "dependencies": {
+    "graphql": "^15.8.0"
+  }
+}
