@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script src="../node_modules/axios/dist/axios.min.js"></script>
+<script>
+  axios({
+    method: 'POST', // GraphQL 查询方法必须是POST
+    url: 'http://localhost:1234/graphql',
+    data: {
+      query: '{ foo, count }'
+    }
+  }).then(res => {
+    console.log('res', res)
+  })
+</script>
+</html>

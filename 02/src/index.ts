@@ -18,7 +18,7 @@ const schema = buildSchema(`
   type User {
     name: String
     age: Int
-    hobbies: [ String ]
+    hobbies: [ String! ]!
     scores: [ Score ]
   }
 
@@ -32,7 +32,7 @@ const schema = buildSchema(`
   # Query 是所有查询的入口点
   # Query 必须有，且不能重复
   type Query {
-    foo: String
+    foo: String!
     count: Int
     salary: Float
     bol: Boolean
