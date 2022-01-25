@@ -36,9 +36,20 @@ const schema = buildSchema(`
     tagList: [ String ]
   }
 
+  input UpdateArticleInput {
+    title: String
+    content: String
+  }
+
+  type DeleteStatus {
+    success: Boolean!
+  }
+
   # 修改入口
   type Mutation {
     createArticle(article: CreateArticleInput): Article
+    updateArticle(id: ID!,  article: UpdateArticleInput): Article
+    deleteArticle(id: ID!): DeleteStatus
   }
 `);
 
@@ -50,6 +61,19 @@ const root = {
     article.id = uuidV4()
     articles.push(article)
     return article
+  },
+  updateArticle: ({ id, article: updateArticle }: any) => {
+    const article = articles.find(v => v.id === id)
+    article.title = updateArticle.title
+    article.content = updateArticle.content
+    return article
+  },
+  deleteArticle({ id }: any) {
+    const index = articles.findIndex(v => v.id === id)
+    articles.splice(index, 1)
+    return {
+      success: true
+    }
   }
 };
 
