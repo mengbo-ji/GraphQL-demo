@@ -5,9 +5,9 @@ export const typeDefs = gql`
   directive @auth on FIELD_DEFINITION
 
   type User {
-    email: String!
+    email: String
     # username: String! @deprecated(reason: "请使用 newUsername")
-    username: String!
+    username: String
     bio: String
     image: String
     token: String
@@ -26,7 +26,7 @@ export const typeDefs = gql`
   type Query {
     # foo: String @upper
     foo: String @auth @upper
-    currentUser: User @auth
+    getUser: User @auth
     articles(offset: Int = 0, limit: Int = 2): ArticlesPayload
   }
 

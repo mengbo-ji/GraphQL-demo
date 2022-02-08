@@ -5,7 +5,11 @@ import md5 from '../util/md5';
 
 export const resolvers = {
   Query: {
-    foo: () => 'hello'
+    foo: () => 'hello',
+    async getUser(parent: any, args: any, context: any, info: any) {
+      // 校验当前登录状态
+      return context.user
+    }
   },
   Mutation: {
     async createUser(parent: any, { user }: any, { dataSources }: any) {

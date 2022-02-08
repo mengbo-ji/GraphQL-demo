@@ -14,6 +14,12 @@ export default class Users extends MongoDataSource {
     })
   }
 
+  findById(id) {
+    return this.model.findOne({
+      _id: id
+    })
+  }
+
   saveUser(args) {
     const user = new this.model(args)
     return user.save()
